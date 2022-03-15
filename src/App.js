@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import Button from './components/UI/button/Button';
+import Modal from './modal/Modal';
+import { Link } from 'react-router-dom';
 
 function App() {
+  const [modalActive, setModalActive] = useState();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Link to='/registration' style={{ textDecoration: 'none' }}>
+        <Button color="yellow" onClick={() => setModalActive(true)}>Открыть форму / Зарегистрироваться</Button>
+      </Link>  
+      <Modal active={modalActive} setActive={setModalActive} />
     </div>
   );
-}
+};
 
 export default App;
