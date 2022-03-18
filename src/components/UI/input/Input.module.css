@@ -6,6 +6,7 @@
 
   position: static;
   width: 356px;
+  height: 48px;
   left: calc(50% - 356px/2);
   top: 0%;
   bottom: 53.85%;
